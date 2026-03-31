@@ -1,0 +1,434 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    z-index: 100;
+}
+
+.brand {
+    font-weight: bold;
+    font-family: serif;
+    font-size: 1.7rem;
+}
+
+/* Desktop Styles */
+.navlink {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 20px;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+.navlink.active, .navlink:hover {
+    border-bottom: 3px solid gray;
+    font-weight: 800;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navlinks {
+        position: absolute;
+        top: 100%;
+        left: -100%; /* Hidden by default */
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    .navlinks.open {
+        left: 0; 
+    }
+
+    .navlink {
+        display: block;
+        margin: 15px 0;
+    }
+
+    /* Close Button Animation */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/img3.avif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: whitesmoke;
+    padding: 0 20px; 
+}
+
+.hero-info {
+    max-width: 800px;
+}
+
+.hero-info h1 {
+    font-size: 4rem; 
+    font-family: serif;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-info p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Button Styling */
+.hero-btn .hero-btnn {
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-btn button:hover {
+    background: white;
+    color: #333;
+}
+
+
+
+/* Section Spacing */
+.gallery-container {
+    padding: 80px 5%;
+    margin-bottom: 100px; 
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-family: serif;
+}
+
+/* The Grid System */
+.imggrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Container */
+.image-card {
+    position: relative;
+    overflow: hidden; 
+    height: 300px;
+    cursor: pointer;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Floating Text Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+}
+
+.overlay span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    padding: 10px 20px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effects */
+.image-card:hover img {
+    transform: scale(1.1); 
+    filter: blur(2px);
+}
+
+.image-card:hover .overlay {
+    opacity: 1;
+}
+
+.image-card:hover .overlay span {
+    transform: translateY(0); 
+}
+
+
+/* about */
+#about{
+   background: linear-gradient(black,purple);
+    padding: 50px 20px;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    
+}
+.abtitle{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+.about{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.abt, .info p{
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+
+}
+.info p{
+    opacity: 0.7;
+}
+.abt-btn{
+    text-align: center;
+}
+.btn{
+    padding: 10px;
+    background: lightgray;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+.btn:hover{
+    background: #333;
+    color: lightgray;
+}
+.abtimg img{
+    border-radius: 10%;
+}
+
+/* species */
+.species{
+    padding: 50px;
+}
+.aqtitle{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: purple;
+    margin-bottom: 40px;
+    
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card{
+    border-top: 3px solid purple;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    width: 100%;          
+    max-width: 350px;     
+    margin: auto;        
+}
+.card:hover{
+    background: purple;
+    color: white;
+    transform: translateY(-5px);  
+    transition: 0.3s;
+}
+.tcard-title{
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.description{
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.footer {
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+    color: purple; 
+    transform: translateY(-5px);
+}
+
+/* Copyright Styling */
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    letter-spacing: 1px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+
+    .footer-copyright p {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media(max-width:768px){
+    .hero {
+        height: 60vh; 
+    }
+    
+    .hero-info h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .hero-info p {
+        font-size: 1rem;
+    }
+    
+    .abtitle{
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .abt, .info p{
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: white;
+}
+.btn{
+    margin-bottom: 15px;
+}
+.abtimg img{
+    border-radius: 10%;
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+}
+ .card{
+        padding: 15px;
+    }
+
+    .tcard-title{
+        font-size: 1rem;
+    }
+
+    .description{
+        font-size: 0.85rem;
+    }
+    
+
+    
+}
+
+
